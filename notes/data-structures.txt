@@ -1,0 +1,115 @@
+# Big-0 Notation
+# Big-0 Notation gives an upper bound of the complexity in the worst case, helpsing to quantify performance as the input size becomes arbitrarily large.
+
+# The following run in linear time: 0(n)
+i = 0
+while i < n:
+    i = i + 1
+# f(n) = n
+# 0(f(n) = 0 (n))
+
+i = 0
+while i < n:
+    i = i + 3
+# f(n) = n/2
+# 0(f(n) = 0 (n))
+
+
+# Linked Lists
+# Head: The first node in a linked list
+# Tail: The last node in a linked list
+# Pointer: Reference to another node
+# Node: An object containing data and pointer(s)
+
+# Doubly Linked Lists can be traversed backwards and take 2x memory more than Singly Linked Lists
+
+
+# Stack
+# A stack is a one-ended linear data structure which models a real world stack by having two primary operations, namely push and pop.
+# used everywhere (editors, compiler, recursion, books)
+# Can be used to do a Depth First Search (DFS) on a graph.
+
+# Example - Brackets
+# [[{}]()] - valid
+# [{})[] - invalid
+
+Let S be a stack
+For bracket in bracket_string:
+    rev = getReversedBracket(bracket)
+    
+    If isLeftBracket(bracket):
+        S.push(bracket)
+    
+    Else If S.isEmpty() or S.pop() != rev:
+        return false // invalid
+
+return S.is Empty // Valid if S is empty
+
+# Tower of Hanoi is related to Stack
+
+
+# Queues
+# A queue is a linear data structure which models real world queues by having two primary operations, namely ewqueue and dequeue.
+# Enqueue = Adding = Offering
+# Dequeue = Polling
+# Used cases:
+# -Web server request management where you want first come first server
+# -Breadth firs search (BFS) graph traversal
+
+Let Q be a Queue
+Q.enqueue(starting_node)
+starting_node.visited = true
+
+    While Q is not empty Do
+
+        node = Q.dequeue()
+
+        For neighbour in neighbours(node):
+            If neighbour has not been visited:
+            neighbour.visited = true
+            Q.enqueue(neighbour)
+
+
+""" 
+Priority Queues (PQs) with an interlude on heaps
+- A priority queue is an Abstract Data Type (ADT) that operates similiar to a normal queue except that each element has a certain priority. The priority of the elements in the priority queue determine the order in which elements are removed from the PQ.
+- NOTE: Priority queues only supports comparable data, meaning the data inserted into the priority queue must be able to be ordered in some way either from least to greatest or greatest to least. This is so that we are able to assign relative priorities to each element.
+
+Heap
+- A heap is a tree based DS that satisfies the heap invariant (also called heap property): If A is a parent node of B then A is ordered with respect to B for all nodes A, B in the heap.
+- Max Heap = Always greater than his children
+- Min Heap = Always fewer than his children
+- Heap cannot contain cycles inside because it is tree
+- Used of: Anytime you need the dynamically fetch the 'next best' or 'next worset element'
+- Used by Minimum Spanning Tree (MST) algorithms
+
+
+Turning Min PQ into Max PQ
+- Problem = Often the standard library of most programming languages only provide a min PQ which sorts by smallest elements firs, but sometimes we need a Max PQ
+- Since elements in a priority queue are comparable they implement some sort of comparable interface which we can simply negate to achieve a Max help
+- An alternative method for numbers is to negate the numbers as insert them into the PQ and negate them again when they are taken out. This has the same effect as negating the comparator.
+
+Adding Elements to Binary Heap
+- Priority queues are usually implemented with heaps since this gives them the best possible time complexity.
+- The Priority Queue (PQ) is and Abstract Data Type (ADT), hence heaps are not the only way to implement PQs. As an example, we could use an unsorted list, but this would no tgive us the best possible time complexity.help
+
+Priority Queue With Binary Heap 
+- There are many types of heaps we could use to implement a priority queue including:
+    -Binary Heap
+    -Fibonacci Heap
+    -Binomial Heap
+    -Pairing Heap
+    ...
+- A binary heap is a binary tree that supports the heap invariant. In a binary tree every node has exactly two children
+- A complete binary tree is a tree in which at every level, except possibly the last is completely filled and all the nodes are as far lef as possible
+
+Binary Heap Representation
+/let i be the parent node index
+- Lef child index: 2i + 1
+- Right child index: 2i + 2 (zero based)
+
+Insert(1)
+
+
+
+"""

@@ -132,5 +132,19 @@ poll()
 Priority Queue Binary Heap Source Code
 -
 
+Union Find!
+-Union Find is a data structure that keeps track of elements which are split into one or more disjoint sets.
+-It has two primary operations: find(it will thell you what group that element belongs to) and union (merges two groups together)
+-Use of it:
+	-Kruskal's minimum spanning tree algorithm
+	-Network connectivity
+	-Least common ancestor in trees
+
+Union Find application: Kruskal's Minimum Spanning Tree
+-Given a graph G = (V,E) we want to find a Minimum Spanning Tree in the graph (it may no be unique).
+A minimum spanning tree is a subset of the edges which connect all vertices in the graph with the minimal total edge cost.
+1) Sort edges by ascending edge weight.
+2) Walk through the sorted edges and look at the two nodes the edge belongs to, if the nodes are already unified we don't include this edge, otherwise we include it and unify the nodes.
+3) The algorithm terminates when every edge has been processed or all the verices have been unified.
 
 """
